@@ -6,9 +6,11 @@ import io
 from PIL import Image
 import imageio
 import openai
-
-openai.api_key = 'pk-nHkcBLngWWWBPDdyVBjJFyOLNItDHDIkLbCeIBuYldOeuLDc'
-openai.base_url = "https://api.pawan.krd/cosmosrp/v1/chat/completions"
+import os;
+from dotenv import load_dotenv
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.base_url = os.getenv("OPENAI_BASE_URL")
 
 app = Flask(__name__)
 
